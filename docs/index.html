@@ -12,9 +12,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
 	<script>
-		window.getGliaContext = function() {
-			return 'eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJuYW1lIjoiSm9obiBEb2UiLCJnaXZlbl9uYW1lIjoiSm9obiIsImZhbWlseV9uYW1lIjoiRG9lIiwiZW1haWwiOiJqb2huLmRvZUBleGFtcGxlLmNvbSIsInN1YiI6ImpvaG4uZG9lIiwiZXhwIjoxNjUzNzYyOTMyLCJpYXQiOjE2NTI4OTg5MzJ9.yGKX3BxdZiO89bp8RiZqigGy68TSX8CVkAhBpHkMNfWETUzHluN1uPfpOwQBqrR2DR5qxr0TPS3SCxdGamnuEQ';
-		};
+		const idToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJuYW1lIjoiSm9obiBEb2UiLCJnaXZlbl9uYW1lIjoiSm9obiIsImZhbWlseV9uYW1lIjoiRG9lIiwiZW1haWwiOiJqb2huLmRvZUBleGFtcGxlLmNvbSIsInN1YiI6ImpvaG4uZG9lIiwiZXhwIjoxNjUzNzYyOTMyLCJpYXQiOjE2NTI4OTg5MzJ9.yGKX3BxdZiO89bp8RiZqigGy68TSX8CVkAhBpHkMNfWETUzHluN1uPfpOwQBqrR2DR5qxr0TPS3SCxdGamnuEQ';
+		window.getGliaContext = () => ({ idToken });
 	</script>
 	<script src="https://api.beta.salemove.com/salemove_integration.js"/>
 	<noscript>
