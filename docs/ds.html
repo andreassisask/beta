@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>Signing</title>
+	<style>
+		html,
+		body {
+			padding: 0;
+			margin: 0;
+			font: 13px Helvetica, Arial, sans-serif;
+		}
+
+		@media (max-width: 768px) {
+			.docusign-agreement-container {
+				width: 50%
+			}
+		}
+
+		@media (min-width: 769px) (max-width: 1024px) {
+			.docusign-agreement-container {
+				width: 70%
+			}
+		}
+
+		@media (min-width: 1025px) {
+			.docusign-agreement-container {
+				width: 100%
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<h1> Demo</h1>
+	</header>
+
+	<div class="docusign-agreement-container" id="docusign"></div>
+	<script src="https://js-d.docusign.com/bundle.js"></script>
+	<!-- when this script is loaded, DocuSign is added to the window -->
+	<!-- use src="https://js.docusign.com/bundle.js" for production -->
+
+	<script>
+		window.DocuSign.loadDocuSign('109ab051-50b6-42ba-aae1-76fa8c20680d')
+			.then((docusign) => {
+				const signing = docusign.signing({
+					url: 'https://demo.docusign.net/Signing/MTRedeem/v1/76e24b29-7b1d-404a-9750-f4098b42a7de?slt=eyJ0eXAiOiJNVCIsImFsZyI6IlJTMjU2Iiwia2lkIjoiNjgxODVmZjEtNGU1MS00Y2U5LWFmMWMtNjg5ODEyMjAzMzE3In0.AQYAAAABAAMABwAAt06d1TPcSAgAAFdgJPcz3EgYAAEAAAAAAAAAIQDsAgAAeyJUb2tlbklkIjoiYzMyZjkwZDAtOGYyMy00MzZhLWFlNTctN2Q1MDgxZGRkZjAxIiwiRXhwaXJhdGlvbiI6IjIwMjQtMDItMjJUMTg6NDQ6MzQrMDA6MDAiLCJJc3N1ZWRBdCI6IjIwMjQtMDItMjJUMTg6Mzk6MzQuMTgwNTA3NCswMDowMCIsIlJlc291cmNlSWQiOiIwOTI4ODExZC05ZGUwLTQ1ZTktOTIzMC02ZDIwYjdmMmI5M2UiLCJSZXNvdXJjZXMiOiJ7XCJFbnZlbG9wZUlkXCI6XCIwOTI4ODExZC05ZGUwLTQ1ZTktOTIzMC02ZDIwYjdmMmI5M2VcIixcIkFjdG9yVXNlcklkXCI6XCI1ODQ2NjI0ZC0xY2U5LTQzZWMtOWQ2Zi1iODVjNmU0MDkxMjNcIixcIlJlY2lwaWVudElkXCI6XCJjNDJjZDc0MS0zNjU2LTRlY2MtYTkyOC1kYzJhOTg3ZWM5MTVcIixcIkZha2VRdWVyeVN0cmluZ1wiOlwidD04YzkyYjQyMy1kNmRjLTQwZDctOGE2ZC1mM2NiYWZiYzU1MzdcIixcIkludGVncmF0b3JLZXlcIjpcIjFjZGVkMjI5LTRkMGYtNGVhZi04NjdlLWNmYTM3ZTFiYTM0ZFwiLFwiQ3JlYXRlZEF0XCI6XCIyMDI0LTAyLTIyVDE4OjM5OjM0LjE1NDUwNDlaXCJ9IiwiVG9rZW5UeXBlIjoxLCJBdWRpZW5jZSI6IjI1ZTA5Mzk4LTAzNDQtNDkwYy04ZTUzLTNhYjJjYTU2MjdiZiIsIlJlZGlyZWN0VXJpIjoiaHR0cHM6Ly9kZW1vLmRvY3VzaWduLm5ldC9TaWduaW5nL1N0YXJ0SW5TZXNzaW9uLmFzcHgiLCJIYXNoQWxnb3JpdGhtIjowLCJIYXNoUm91bmRzIjowLCJUb2tlblN0YXR1cyI6MCwiSXNTaW5nbGVVc2UiOmZhbHNlfT8AgH6GT9Yz3Eg.Mlr06YLkd3QDEaFrOBF6dsPYH-Q9InY2pVXcUhfXDb9omhKfPBEV5vi2Hcx84ji70V5c38ABRBnBQp-H0leXZ8UU_J4p-azea0w4UFy99RoKV24rsGtt2dGNy9RLYajWtwqXAy2Pkd2AZnPrLcCTgnHH9uLMa9peC4cRh9zOXTcTS8__lO1PzOSFcv8bx4Rxzn4mLaTNETpeE1o763E6gRhAtxQ7M9IN3kiBlGWR6ClCwvU5vDAZGtbcpr739XOB4EDF06itmH4ReXxo2JfnNTNQxdIHO0MV0sIP-3bX4izKwleyZ64kaB420fYRyQYyaIOLG7nHWAPrP3MxOEMzqg',
+					displayFormat: 'focused',
+					style: {
+						/** High-level variables that mirror our existing branding APIs. Reusing the branding name here for familiarity. */
+						branding: {
+							primaryButton: {
+								/** Background color of primary button */
+								backgroundColor: '#333',
+								/** Text color of primary button */
+								color: '#fff',
+							}
+						},
+
+						/** High-level components we allow specific overrides for */
+						signingNavigationButton: {
+							finishText: 'Custom Button Text',
+							/** 'bottom-left'|'bottom-center'|'bottom-right',  default: bottom-right */
+							position: 'bottom-left'
+						}
+					}
+				});
+
+				/** Event handlers **/
+				signing.on('ready', (event) => {
+					console.log('UI is rendered');
+				});
+
+				signing.on('sessionEnd', (event) => {
+					console.log('sessionend', event);
+				});
+
+				signing.mount('#agreement');
+			})
+			.catch((ex) => {
+				// Any configuration or API limits will be caught here
+			});
+	</script>
+</body>
+
+</html>
