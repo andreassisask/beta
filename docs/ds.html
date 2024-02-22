@@ -37,7 +37,7 @@
 		<h1> Demo</h1>
 	</header>
 
-	<div class="docusign-agreement-container" id="docusign"></div>
+	<div class="docusign-agreement-container" id="agreement"></div>
 	<script src="https://js-d.docusign.com/bundle.js"></script>
 	<!-- when this script is loaded, DocuSign is added to the window -->
 	<!-- use src="https://js.docusign.com/bundle.js" for production -->
@@ -45,6 +45,9 @@
 	<script>
 		window.DocuSign.loadDocuSign('109ab051-50b6-42ba-aae1-76fa8c20680d')
 			.then((docusign) => {
+				const params = new Proxy(new URLSearchParams(window.location.search), {
+					get: (searchParams, prop) => searchParams.get(prop),
+				});
 				const dsurl = params.dsurl;
 				const signing = docusign.signing({
 					url: dsurl,
