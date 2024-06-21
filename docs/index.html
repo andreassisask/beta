@@ -43,6 +43,7 @@
 				var submit = document.querySelector('#contact');
 
 				submit.addEventListener('click', function () {
+					console.log('Contact button clicked');
 					engagement.recordEvent({ message: 'Contact button clicked'});
 				});
 			}
@@ -75,7 +76,7 @@
 					<li><a href="#intro">Intro</a></li>
 					<li><a href="#work">Work</a></li>
 					<li><a href="#" onclick="login()">Login</a></li>
-					<li><a href="#contact" id="contact">Contact</a></li>
+					<li><a href="#" id="contact">Contact</a></li>
 					<!--<li><a href="#elements">Elements</a></li>-->
 				</ul>
 			</nav>
